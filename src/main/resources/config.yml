@@ -1,0 +1,6 @@
+benchmarks:
+  - ==: me.cooleg.easybench.BenchmarkProfile
+    profile-name: YABS
+    download-name: yabs.sh
+    execution-command: "%path%yabs.sh -w output.json"
+    download-link: https://raw.githubusercontent.com/masonr/yet-another-bench-script/master/yabs.sh

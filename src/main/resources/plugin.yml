@@ -1,0 +1,7 @@
+name: EasyBench
+version: '${project.version}'
+main: me.cooleg.easybench.EasyBench
+api-version: '1.13'
+commands:
+  runbenchmark:
+    permission: easybench.run
