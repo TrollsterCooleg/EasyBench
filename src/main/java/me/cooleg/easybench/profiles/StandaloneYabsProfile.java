@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class StandaloneYabsProfile extends AbstractBenchmarkProfile {
 
-    private static Map<String, Object> info = new HashMap<>();
+    private static final Map<String, Object> info = new HashMap<>();
 
     static {
         info.put("profile-name", "YABS");
@@ -26,7 +26,7 @@ public class StandaloneYabsProfile extends AbstractBenchmarkProfile {
     public void runBenchmark() {
         File output = new File(downloadName);
 
-        if (!local) {
+        if (!output.exists()) {
             try {
                 InputStream stream = downloadLink.openStream();
                 Files.copy(stream, output.toPath(), StandardCopyOption.REPLACE_EXISTING);
