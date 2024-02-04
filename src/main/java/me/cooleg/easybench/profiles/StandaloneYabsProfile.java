@@ -40,9 +40,12 @@ public class StandaloneYabsProfile extends AbstractBenchmarkProfile {
         try {
             ProcessBuilder builder = new ProcessBuilder(executionCommand.replace("%path%", output.getAbsoluteFile().getParentFile().getAbsolutePath() + "/").split("\\s"));
             builder.inheritIO();
-            builder.start();
+            Process process = builder.start();
+            process.waitFor();
         } catch (IOException ex) {
             ex.printStackTrace();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
         }
     }
 }
